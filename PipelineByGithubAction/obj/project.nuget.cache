@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "2QV/0R1opQw=",
+  "success": true,
+  "projectFilePath": "/home/knoldus/Desktop/CICDPipelineBranch/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj",
+  "expectedPackageFiles": [
+    "/home/knoldus/.nuget/packages/selenium.webdriver/4.30.0/selenium.webdriver.4.30.0.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/selenium.webdriver.chromedriver/135.0.7049.4200/selenium.webdriver.chromedriver.135.0.7049.4200.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "PipelineByGithubAction depends on Selenium.WebDriver.ChromeDriver (>= 135.0.7049.95) but Selenium.WebDriver.ChromeDriver 135.0.7049.95 was not found. An approximate best match of Selenium.WebDriver.ChromeDriver 135.0.7049.4200 was resolved.",
+      "libraryId": "Selenium.WebDriver.ChromeDriver",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
