@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PipelineByGithubAction")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eaafc60a52b1f36c14fc11d2a3911d3b286a218f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb657d8b753af93cc320ba7b2b713b5553df40b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("PipelineByGithubAction")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PipelineByGithubAction")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,7 +13,15 @@ namespace PipelineByGithubAction
         [SetUp]
         public void loginPage()
         {
-            driver = new ChromeDriver();
+            var options = new ChromeOptions();
+            options.AddArgument("--headless=new"); // Modern headless mode for Chrome >= 109
+            options.AddArgument("--disable-gpu");
+            options.AddArgument("--no-sandbox");
+            options.AddArgument("--disable-dev-shm-usage");
+            options.AddArgument("--user-data-dir=/tmp/unique-user-data-dir-" + Guid.NewGuid().ToString()); // avoid profile conflicts
+
+            driver = new ChromeDriver(options);
+
 
             driver.Navigate().GoToUrl("https://www.flipkart.com");
             driver.Manage().Window.Maximize();
