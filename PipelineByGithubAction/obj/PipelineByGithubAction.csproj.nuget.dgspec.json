@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/knoldus/Desktop/CICDPipelineBranch/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj": {}
+    "/home/knoldus/Desktop/NewIntegration/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj": {}
   },
   "projects": {
-    "/home/knoldus/Desktop/CICDPipelineBranch/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj": {
+    "/home/knoldus/Desktop/NewIntegration/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/knoldus/Desktop/CICDPipelineBranch/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj",
+        "projectUniqueName": "/home/knoldus/Desktop/NewIntegration/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj",
         "projectName": "PipelineByGithubAction",
-        "projectPath": "/home/knoldus/Desktop/CICDPipelineBranch/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj",
+        "projectPath": "/home/knoldus/Desktop/NewIntegration/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj",
         "packagesPath": "/home/knoldus/.nuget/packages/",
-        "outputPath": "/home/knoldus/Desktop/CICDPipelineBranch/CICDPipelineBranch/PipelineByGithubAction/obj/",
+        "outputPath": "/home/knoldus/Desktop/NewIntegration/CICDPipelineBranch/PipelineByGithubAction/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/knoldus/.nuget/NuGet/NuGet.Config"
@@ -43,13 +43,25 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.9.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.30.0, )"
             },
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
-              "version": "[135.0.7049.95, )"
+              "version": "[135.0.7049.4200, )"
             }
           },
           "imports": [
@@ -63,6 +75,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

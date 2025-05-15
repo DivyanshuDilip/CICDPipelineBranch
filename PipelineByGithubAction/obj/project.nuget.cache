@@ -1,22 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "2QV/0R1opQw=",
+  "dgSpecHash": "HZzvMDj6URc=",
   "success": true,
-  "projectFilePath": "/home/knoldus/Desktop/CICDPipelineBranch/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj",
+  "projectFilePath": "/home/knoldus/Desktop/NewIntegration/CICDPipelineBranch/PipelineByGithubAction/PipelineByGithubAction.csproj",
   "expectedPackageFiles": [
+    "/home/knoldus/.nuget/packages/microsoft.codecoverage/17.9.0/microsoft.codecoverage.17.9.0.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/microsoft.net.test.sdk/17.9.0/microsoft.net.test.sdk.17.9.0.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/microsoft.testplatform.objectmodel/17.9.0/microsoft.testplatform.objectmodel.17.9.0.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/microsoft.testplatform.testhost/17.9.0/microsoft.testplatform.testhost.17.9.0.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/netstandard.library/2.0.0/netstandard.library.2.0.0.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/nunit/3.13.3/nunit.3.13.3.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/nunit3testadapter/4.5.0/nunit3testadapter.4.5.0.nupkg.sha512",
     "/home/knoldus/.nuget/packages/selenium.webdriver/4.30.0/selenium.webdriver.4.30.0.nupkg.sha512",
-    "/home/knoldus/.nuget/packages/selenium.webdriver.chromedriver/135.0.7049.4200/selenium.webdriver.chromedriver.135.0.7049.4200.nupkg.sha512"
+    "/home/knoldus/.nuget/packages/selenium.webdriver.chromedriver/135.0.7049.4200/selenium.webdriver.chromedriver.135.0.7049.4200.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/microsoft.netcore.app.ref/8.0.15/microsoft.netcore.app.ref.8.0.15.nupkg.sha512",
+    "/home/knoldus/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.15/microsoft.aspnetcore.app.ref.8.0.15.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "PipelineByGithubAction depends on Selenium.WebDriver.ChromeDriver (>= 135.0.7049.95) but Selenium.WebDriver.ChromeDriver 135.0.7049.95 was not found. An approximate best match of Selenium.WebDriver.ChromeDriver 135.0.7049.4200 was resolved.",
-      "libraryId": "Selenium.WebDriver.ChromeDriver",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

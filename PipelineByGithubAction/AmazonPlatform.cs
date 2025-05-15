@@ -1,88 +1,98 @@
+using NUnit;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using PageObject;
-
 
 namespace PipelineByGithubAction
 {
+    [TestFixture]
     class AmazonPlatform
     {
-        static void Main(string[] args)
+        private IWebDriver driver;
+
+        [SetUp]
+        public void loginPage()
         {
-            IWebDriver driver = new ChromeDriver();
+            driver = new ChromeDriver();
 
-            driver.Navigate().GoToUrl("https://www.amazon.in/");
-
+            driver.Navigate().GoToUrl("https://www.flipkart.com");
             driver.Manage().Window.Maximize();
 
-            AmazonHomepage homePage = new AmazonHomepage();
+        }
 
-            driver.FindElement(homePage.searchBarInput).SendKeys("Laptop");
-
-            Thread.Sleep(3000);
-
-            IList<IWebElement> differentOption = driver.FindElements(homePage.allOptionsField);
-
-            foreach (var i in differentOption)
-            {
-                string allOptions = i.Text;
-                Console.WriteLine(allOptions);
-
-                if (allOptions == "laptop table stand")
-                {
-                    i.Click();
-                    break;
-
-                }
-            }
-
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
-            //  WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
-
-            ProductSearchPage products = new ProductSearchPage();
-
-            IList<IWebElement> checkboxes = driver.FindElements(products.differentBrandCheckbox);
-
-            foreach (var checkbox in checkboxes)
-            {
-                string brandNames = checkbox.Text;
-                Console.WriteLine(brandNames);
-
-                if (brandNames == "ZEBRONICS")
-                {
-                    checkbox.Click();
-                    break;
-                }
-            }
+        [Test]
+        public async Task FlipkartPage()
+        {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            IList<IWebElement> differentProducts = driver.FindElements(products.productDetail);
+            driver.FindElement(By.XPath("//a[@aria-label='Mobiles']")).Click();
 
-            foreach (var productOptions in differentProducts)
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+
+            // Scroll down by a specified number of pixels
+            js.ExecuteScript("window.scrollBy(0, 2000);");  // Scrolls down by 250 pixels
+
+            // Thread.Sleep(Timeout.Infinite);
+            // driver.FindElement(By.XPath("//div[@class='e+xvXX KvHRYS']/span")).Click();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+
+            // IList<IWebElement> allMobiles = driver.FindElements(By.XPath("//div[@class='uHlz8t']//div[@class='lx8H6m']/div/div"));
+            // TestContext.Progress.WriteLine("Number of Mobiles Found: ");
+            // foreach (IWebElement a in allMobiles)
+            // {
+            //     // var mobileBrand = a.Text;
+            //     // Console.WriteLine(mobileBrand);
+
+            //     if (!a.Selected)
+            //     {
+            //         a.Click();
+            //         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+
+            //     }
+
+
+            //     // if (mobileBrand == "LG")
+            //     // {
+
+            //     //     a.Click();
+            //     // }
+            // }
+
+            //  driver.FindElement(By.XPath("//a[@href='/tyy/4io/~cs-udlfwh2343/pr?sid=tyy,4io&collection-tab-name=OPPO+K12x+5G&pageCriteria=default&param=2311&otracker=CLP_BannerX3&fm=organic&ppt=hp&ppn=homepage&ssid=4dmx763w1s0000001743751620744']")).Click();
+            driver.FindElement(By.XPath("//a[contains(@href, '/tyy/4io/~cs-udlfwh2343/pr?sid=tyy,4io&collection-tab-name=OPPO+K12x+5G&pageCriteria=default&param=2311')]")).Click();
+
+            IList<IWebElement> oppoMobiles = driver.FindElements(By.XPath("//div[@class='KzDlHZ']"));
+
+            foreach (var m in oppoMobiles)
             {
-                string product = productOptions.Text;
-                Console.WriteLine(product);
+                var mobiles = m.Text;
+                Console.WriteLine(mobiles);
 
-                if (product == "ZEBRONICS DOW Y2, Foldable Laptop Table, Cup Holder, Tablet | Pen | Mobile - Holder, Sturdy Legs, Anti Slip Feet, Table for Study | Work | Craft (Black)")
+                if (mobiles == "OPPO K12x 5G with 45W SUPERVOOC Charger In-The-Box (Midnight Violet, 256 GB)")
                 {
-                    productOptions.Click();
-                    break;
+                    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+                    m.Click();
                 }
             }
 
             var allWindows = driver.WindowHandles;
 
+            Console.WriteLine(allWindows);
+
             driver.SwitchTo().Window(allWindows[1]);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
-            // IWebElement clickableElement = wait.Until(d => d.FindElement(products.addToCartButton)).Displayed;
+            //  Thread.Sleep(Timeout.Infinite);
+            //   driver.FindElement(By.XPath("//button[text()='Buy Now']")).Click();
 
-            driver.FindElement(products.addToCartButton).Click();
-            driver.FindElement(products.proceedToBuyButton).Click();
-
-            Thread.Sleep(Timeout.Infinite);
-
-
+            //  Thread.Sleep(Timeout.Infinite);
         }
+        [TearDown]
+        public void FlipkartLogoutPage()
+        {
+            driver.Quit();
+        }
+
     }
 }

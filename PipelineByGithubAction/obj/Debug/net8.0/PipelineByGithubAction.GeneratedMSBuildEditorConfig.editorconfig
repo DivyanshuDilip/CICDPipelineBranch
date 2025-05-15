@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PipelineByGithubAction
-build_property.ProjectDir = /home/knoldus/Desktop/CICDPipelineBranch/CICDPipelineBranch/PipelineByGithubAction/
+build_property.ProjectDir = /home/knoldus/Desktop/NewIntegration/CICDPipelineBranch/PipelineByGithubAction/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
